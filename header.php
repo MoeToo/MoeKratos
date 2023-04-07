@@ -10,7 +10,8 @@
  | |  | | (_) |  __/ . \| | | (_| | || (_) \__ \
  |_|  |_|\___/ \___|_|\_\_|  \__,_|\__\___/|___/
                                                 
-                                                 -->
+                                                 
+-->
 
 <html class="no-js">
 
@@ -32,7 +33,7 @@
 
 		<?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
 
-		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="shortcut icon" href="<?php $this->options->favicon(); ?>">
 
 		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
@@ -42,7 +43,7 @@
 
 		<link href="https://cdn.bootcdn.net/ajax/libs/superfish/1.7.4/superfish.min.css" rel="stylesheet">
 
-		<link rel='stylesheet' id='kratos-style-css'  href='<?php $this->options->themeUrl('css/style.css?ver=2.5.2'); ?>' type='text/css' media='all' />
+		<link rel='stylesheet' id='kratos-style-css'  href='<?php $this->options->themeUrl('css/style.css'); ?>' type='text/css' media='all' />
 
 		<?php if($this->options->site_bw == 'able'): ?>
 
@@ -50,6 +51,25 @@
 
 			</style>
 
+		<?php endif; ?>
+
+		<?php if(!$this->is('index')): ?>
+			<?php if($this->fields->backgroundImage): ?>
+				<style type="text/css">
+
+					body{
+						background: url(<?php $this->fields->backgroundImage(); ?>); 
+						background-size: cover;
+						background-repeat: no-repeat;
+						background-attachment: fixed;
+					}
+
+					#kratos-blog-post{
+						background: rgba(255, 255, 255, 0.3);
+						backdrop-filter: blur(5px)
+					}
+				</style>
+			<?php endif; ?>
 		<?php endif; ?>
 
 	</head>
@@ -108,7 +128,7 @@
 
 	<div class="kratos-overlay"></div>
 
-	<div class="kratos-cover kratos-cover_2 text-center" style="background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?>);">
+	<div class="kratos-cover kratos-cover_2 text-center" style="<?php if(!$this->is('index')): ?><?php if(!$this->fields->backgroundImage): ?>background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?><?php endif ?><?php endif ?>);">
 
 		<div class="desc desc2 animate-box"><h2><?php $this->options->logoTxt(); ?></h2><span><?php $this->options->logoTxt2(); ?> </span></div>
 
@@ -116,5 +136,5 @@
 
 </div>
 
-<div id="kratos-blog-post" style="background:#f5f5f5"><!--header-->
+<div id="kratos-blog-post"><!--header-->
 

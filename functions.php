@@ -9,12 +9,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
 
 	//header部分
-
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('favicon'), _t('标签页icon，不写不加载'));
+    
     $logoTxt = new Typecho_Widget_Helper_Form_Element_Text('logoTxt', NULL, NULL, _t('首页字1'), _t('不写不加载'));
 
 	$logoTxt2 = new Typecho_Widget_Helper_Form_Element_Text('logoTxt2', NULL, NULL, _t('首页字2'), _t('不写不加载'));
 
-	$form->addInput($logoTxt);
+	$form->addInput($favicon);
+    
+    $form->addInput($logoTxt);
 
 	$form->addInput($logoTxt2);
 
@@ -156,7 +159,14 @@ function themeConfig($form) {
 }
 
 
+/* 文章自定义字段 */
+function themeFields($layout) {
+    $backgroundImage = new Typecho_Widget_Helper_Form_Element_Text('backgroundImage', null, null, _t('文章背景图'), _t('作为整页背景显示，不填不显示'));
+    $layout->addItem($backgroundImage);
 
+    // $image = new Typecho_Widget_Helper_Form_Element_Text('image', null, null, _t('文章头图'), _t('文章头图会显示在文章的顶部。'));
+    // $layout->addItem($image);
+}
 
 
 
