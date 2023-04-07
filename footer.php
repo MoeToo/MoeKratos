@@ -59,7 +59,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 <script type='text/javascript' src='<?php $this->options->themeUrl('js/superfish.min.js'); ?>'></script>
 
-<script type='text/javascript' src='<?php $this->options->themeUrl('js/kratos.js?ver=2.5.2'); ?>'></script>
+<script type='text/javascript' src='<?php $this->options->themeUrl('js/kratos.js'); ?>'></script>
+
+<?php if ($this->options->maodian == 'able'): ?>
+    <script src="https://gcore.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+<?php endif; ?>
 
 <?php if (!$this->options->sidebarlr == 'single'): ?><script type="text/javascript">
 
@@ -95,21 +99,23 @@ if ($("#main").height() > $("#sidebar").height()) {
 <?php endif; ?>
 </script>
 <script type="text/javascript">
-    var OriginTitle = document.title;
-    var titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            // $('[rel="icon"]').attr('href', "/funny.ico");
-            document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
-            clearTimeout(titleTime);
-        } else {
-            $('[rel="icon"]').attr('href', "/favicon.ico");
-            document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
-            titleTime = setTimeout(function() {
-                document.title = OriginTitle;
-            }, 2000);
-        }
-    });
+    <?php if ($this->options->jokeTitle == 'able'): ?>
+        var OriginTitle = document.title;
+        var titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // $('[rel="icon"]').attr('href', "/funny.ico");
+                document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+                clearTimeout(titleTime);
+            } else {
+                $('[rel="icon"]').attr('href', "/favicon.ico");
+                document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitle;
+                }, 2000);
+            }
+        });
+    <?php endif; ?>
 
     function show_runtime() {
         window.setTimeout("show_runtime()", 1000);
@@ -140,7 +146,7 @@ if ($("#main").height() > $("#sidebar").height()) {
 	type="playlist"
 	id="<?php if ($this->options->musicId): ?><?php $this->options->musicId(); ?><?php else: ?><?php endif; ?>"
     fixed="True"
-    autoplay="<?php if ($this->options->musicAutoPlay == 'true'): ?>true<?php else: ?>false<?php endif; ?>">
+    autoplay="<?php if ($this->options->musicAutoPlay == 'able'): ?>true<?php else: ?>false<?php endif; ?>">
 </meting-js>
 </body>
 </html>

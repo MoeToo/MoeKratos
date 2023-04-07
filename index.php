@@ -2,7 +2,7 @@
 
 /**
 
- * MoeKratos WP主题移植
+ * MoeKratos 移植自WP主题。
 
  * 
 
@@ -10,9 +10,9 @@
 
  * @author MoeToo
 
- * @version 1.0
+ * @version 1.1
 
- * @link https://moe2.works
+ * @link https://blog.moe2.works/archives/6/
 
  */
 

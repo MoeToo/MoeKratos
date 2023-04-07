@@ -40,9 +40,35 @@ function themeConfig($form) {
 
     $form->addInput($site_bw);
 
+    
+    $maodian = new Typecho_Widget_Helper_Form_Element_Radio('maodian',
+        
+        array('able'=>_t('开启'),'disable'=>_t('关闭')),
 
+        'disable',
 
-	
+        _t("鼠标点击特效"),
+    
+        _t("默认关闭"));
+
+    $form->addInput($maodian);
+
+    
+    $jokeTitle = new Typecho_Widget_Helper_Form_Element_Radio('jokeTitle',
+
+        array('able'=>_t('开启'),'disable'=>_t('关闭')),
+
+        'disable',
+
+        _t("恶搞标题"),
+
+        _t("默认关闭")
+
+        );
+    
+    $form->addInput($jokeTitle);
+
+    
 
 	//sidebar部分
 
@@ -57,10 +83,6 @@ function themeConfig($form) {
         ),
 
         'right_side', _t('非首页侧边栏设置'), _t('默认右边栏'));
-
-        
-
-        
 
     $form->addInput($sidebarlr);
 
@@ -119,13 +141,9 @@ function themeConfig($form) {
 
     $musicAutoPlay = new Typecho_Widget_Helper_Form_Element_Radio('musicAutoPlay',
 
-        array('true' => _t('是'),
+        array('able' => _t('开启'),'disable' => _t('关闭'),),
 
-            'false' => _t('否'),
-
-        ),
-
-        'false', _t('音乐自动播放'), _t('默认否'));
+        'disable', _t('音乐自动播放'), _t('默认关闭'));
     
     $form->addInput($musicAutoPlay);
 
