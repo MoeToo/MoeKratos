@@ -25,7 +25,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 
 							<p> © <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>. All Rights Reserved. | <a href="https://blog.moe2.works/admin" rel="nofollow">后台</a><br>
-							Theme <a href="https://blog.moe2.works/archives/6/" rel="nofollow">MoeKratos</a> | <a href="https://icp.gov.moe/?keyword=20220914">萌ICP备20220914号</a></p>
+							Theme <a href="https://blog.moe2.works/archives/6/" rel="nofollow">MoeKratos</a> | <?php if ($this->options->beian): ?><?php $this->options->beian(); ?><?php else: ?><?php endif; ?></p>
                             <div id="runtime_span"></div>
 						</div>
 
@@ -114,7 +114,7 @@ if ($("#main").height() > $("#sidebar").height()) {
     function show_runtime() {
         window.setTimeout("show_runtime()", 1000);
         X = new
-        Date("06/27/2020 7:23:00");
+        Date("<?php if ($this->options->setupTime): ?><?php $this->options->setupTime(); ?><?php else: ?>01/01/2020 0:00:00<?php endif; ?>");
         Y = new Date();
         T = (Y.getTime() - X.getTime());
         M = 24 * 60 * 60 * 1000;
@@ -125,7 +125,7 @@ if ($("#main").height() > $("#sidebar").height()) {
         c = (b - B) * 60;
         C = Math.floor((b - B) * 60);
         D = Math.floor((c - C) * 60);
-        runtime_span.innerHTML = "已在二次元中度过了" + A + "天" + B + "小时" + C + "分" + D + "秒"
+        runtime_span.innerHTML = "<?php if ($this->options->setupTimeTip): ?><?php $this->options->setupTimeTip(); ?><?php else: ?>已经在二次元中度过了<?php endif; ?>" + A + "天" + B + "小时" + C + "分" + D + "秒"
     }
     show_runtime();
 </script>
@@ -138,8 +138,9 @@ if ($("#main").height() > $("#sidebar").height()) {
 <meting-js
 	server="netease"
 	type="playlist"
-	id="551354847"
-    fixed="True">
+	id="<?php if ($this->options->musicId): ?><?php $this->options->musicId(); ?><?php else: ?><?php endif; ?>"
+    fixed="True"
+    autoplay="<?php if ($this->options->musicAutoPlay == 'true'): ?>true<?php else: ?>false<?php endif; ?>">
 </meting-js>
 </body>
 </html>
