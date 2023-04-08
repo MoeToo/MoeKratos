@@ -77,15 +77,23 @@ code {
 	font-size:90%;
 	color:#333;
 	background-color:#f8f8f8;
-	border-radius:0;
+	border-radius:15px;
 	border:1px solid #E1E1E1;
-	margin:0
+	margin:0;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 cite {
 	font-style:normal
 }
 .alert,.btn,.progress,pre {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 mark {
 	padding:.4px 4px;
@@ -106,7 +114,11 @@ table,table tbody tr th {
 	color:#000
 }
 .panel,.panel-heading {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .panel-danger {
 	border-color:#e15554
@@ -213,7 +225,11 @@ table,table tbody tr th {
 	width:55%
 }
 .alert,.panel,.panel-group .panel,.progress {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .alert a,.alert a:hover {
 	color:#fff!important
@@ -484,15 +500,16 @@ table,table tbody tr th {
 	padding:10px 7px 10px;
 	background:#fff;
 	left:-26px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	-ms-border-radius:5px;
-	border-radius:0;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	border-radius:15px;
 	-webkit-box-shadow:0 5px 15px rgba(0,0,0,.15);
 	-moz-box-shadow:0 5px 15px rgba(0,0,0,.15);
 	-ms-box-shadow:0 5px 15px rgba(0,0,0,.15);
 	-o-box-shadow:0 5px 15px rgba(0,0,0,.15);
-	box-shadow:0 5px 15px rgba(0,0,0,.15)
+	box-shadow:0 5px 15px rgba(0,0,0,.15);
+	-o-border-radius:15px;
 }
 #kratos-header-section .sub-menu>li>.sub-menu {
 	left:100%
@@ -997,10 +1014,11 @@ article a {
 	border:1px solid rgba(0,0,0,.1);
 	font-size:18px;
 	font-weight:400;
-	-webkit-border-radius:0;
-	-moz-border-radius:0;
-	-ms-border-radius:0;
-	border-radius:0
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	border-radius:15px;
+	-o-border-radius:15px;
 }
 #kratos-contact .form-control:active,#kratos-contact .form-control:focus {
 	border-bottom:1px solid rgba(0,0,0,.5)
@@ -1322,8 +1340,12 @@ a.comment-reply-link:hover {
 	margin:0 0 14px;
 	background-color:#fff;
 	box-shadow:0 1px 5px rgba(0,0,0,.1);
-	border-radius:0;
-	padding:20px 20px 8px 20px
+	border-radius:15px;
+	padding:20px 20px 8px 20px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .comment-form .form-submit {
 	margin-top:30px
@@ -1360,10 +1382,18 @@ a.comment-reply-link:hover {
 	height:auto;
 	font-size:14px;
 	font-weight:300;
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 #respond .input-group-addon {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .comment-form .form-control-feedback {
 	line-height:40px;
@@ -1375,7 +1405,11 @@ a.comment-reply-link:hover {
 }
 .comment-form .btn-primary {
 	width:100%;
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .comment-form .comment-author {
 	margin-top:10px
@@ -1388,7 +1422,11 @@ a.comment-reply-link:hover {
 	padding:30px;
 	background-color:#fff;
 	box-shadow:0 1px 2px rgba(0,0,0,.1);
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 #kratos-widget-area .amadeus_about {
 	padding:0
@@ -1439,6 +1477,13 @@ a.comment-reply-link:hover {
 }
 #kratos-widget-area .widget_kratos_tags .widget-title::after {
 	height:2px!important
+}
+.widget{
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
 }
 .widget select {
 	max-width:100%
@@ -1525,7 +1570,12 @@ a.comment-reply-link:hover {
 	border-radius:50%
 }
 .photo-background {
-	height:120px
+	height:120px;
+	border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	-ms-border-radius: 15px 15px 0 0;
+	-o-border-radius: 15px 15px 0 0;
 }
 .amadeus_about p {
 	margin-bottom:1em;
@@ -1546,7 +1596,11 @@ a.comment-reply-link:hover {
 .widget_kratos_search input {
 	height:35px;
 	border:1px solid #ccc;
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .widget_kratos_search .form-group {
 	margin-bottom:0
@@ -1561,8 +1615,12 @@ a.comment-reply-link:hover {
 .nav-tabs.nav-justified>li>a {
 	margin-right:0;
 	border-bottom:none;
-	border-radius:0;
-	color:#000
+	border-radius:15px;
+	color:#000;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover {
 	border:none
@@ -1699,7 +1757,6 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	margin-right:5px;
 	position:relative;
 	top:-2px;
-	border-radius:0
 }
 @media screen and (max-width:768px) {
 	.kratos-post-inner-new header .label {
@@ -1747,7 +1804,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 }
 .kratos-entry-footer .footer-tag a {
 	background-color:#aaa;
-	border-radius:0;
+	border-radius:15px;
 	color:#fff;
 	display:inline-block;
 	font-size:11px;
@@ -1756,7 +1813,11 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	margin-top:20px;
 	padding:4px 7px 3px;
 	position:relative;
-	text-transform:uppercase
+	text-transform:uppercase;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .kratos-entry-footer {
 	margin:10px;
@@ -1770,12 +1831,16 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	margin:0 0 2px 5px;
 	margin-top:20px;
 	padding:3px 7px;
-	border-radius:0;
+	border-radius:15px;
 	background-color:#aaa;
 	color:#fff;
 	text-transform:uppercase;
 	font-size:11px;
-	line-height:13px
+	line-height:13px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .kratos-entry-footer .footer-tag a:focus,.kratos-entry-footer .footer-tag a:hover {
 	color:#fff!important
@@ -1792,7 +1857,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	width:130px;
 	height:40px;
 	border:1px solid #e87461;
-	border-radius:0;
+	border-radius:15px;
 	background:#fff;
 	box-shadow:none;
 	color:#e87461;
@@ -1801,7 +1866,11 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	font-size:14.5px;
 	line-height:40px;
 	-webkit-transition:all .3s ease;
-	transition:all .3s ease
+	transition:all .3s ease;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .kratos-entry-footer .post-like-donate a:focus {
 	color:#e87461!important
@@ -2249,7 +2318,11 @@ img.size-smiley {
 	background-color:#fff;
 	border:1px solid #e0e0e0;
 	padding:20px 30px;
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 @media screen and (max-width:768px) {
 	#nav-posts .page-numbers {
@@ -2257,7 +2330,11 @@ img.size-smiley {
 	background-color:#fff;
 	border:1px solid #e0e0e0;
 	padding:8px 13px;
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 }.post-navigation .nav-previous a {
 	color:#5a5a5a
@@ -2271,7 +2348,12 @@ img.size-smiley {
 	max-width:50%;
 	background-color:#fff;
 	box-shadow:0 1px 5px rgba(0,0,0,.1);
-	padding:7px 18px
+	padding:7px 18px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .post-navigation .nav-next {
 	float:right;
@@ -2279,7 +2361,12 @@ img.size-smiley {
 	max-width:50%;
 	background-color:#fff;
 	box-shadow:0 1px 5px rgba(0,0,0,.1);
-	padding:7px 18px
+	padding:7px 18px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 #footer {
 	background:#23282D;
@@ -2811,7 +2898,11 @@ img.size-smiley {
 	padding:6px 20px
 }
 #kratos-photos .kratos-photos-item {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 #kratos-blog .kratos-post .kratos-post-image .kratos-overlay {
 	background:rgba(0,0,0,.1)
@@ -2821,7 +2912,11 @@ img.size-smiley {
 	border-top-left-radius:0
 }
 #kratos-blog .kratos-post {
-	border-radius:0
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-ms-border-radius:15px;
+	-o-border-radius:15px;
 }
 .kratos-post-image img {
 	display:block;

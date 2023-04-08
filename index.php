@@ -63,6 +63,23 @@ if ($imgCount >= 1) {
 	echo($html);
 
 }else{
+	if ($this->fields->backgroundImage) {
+
+		$img = $this->fields->backgroundImage;
+
+		$html = "<div class='kratos-entry-thumb-new'>
+
+		<a href='$this->permalink'>
+
+		<img src='$img' />
+
+		</a>
+
+		</div>";
+
+		echo($html);
+	
+	}
 
 }
 

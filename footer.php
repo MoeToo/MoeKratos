@@ -45,6 +45,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+<script src="https://cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.min.js"></script>
+
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -148,5 +150,10 @@ if ($("#main").height() > $("#sidebar").height()) {
     fixed="True"
     autoplay="<?php if ($this->options->musicAutoPlay == 'able'): ?>true<?php else: ?>false<?php endif; ?>">
 </meting-js>
+
+<!-- pjax -->
+
+
+
 </body>
 </html>

@@ -128,7 +128,14 @@
 
 	<div class="kratos-overlay"></div>
 
-	<div class="kratos-cover kratos-cover_2 text-center" style="<?php if(!$this->is('index')): ?><?php if(!$this->fields->backgroundImage): ?>background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?><?php endif ?><?php endif ?>);">
+	<div class="kratos-cover kratos-cover_2 text-center" style="
+	<?php if(!$this->is('index')): ?>
+		<?php if(!$this->fields->backgroundImage): ?>
+			background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?>
+		<?php endif ?>
+	<?php else: ?>
+		background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?>
+	<?php endif ?>);">
 
 		<div class="desc desc2 animate-box"><h2><?php $this->options->logoTxt(); ?></h2><span><?php $this->options->logoTxt2(); ?> </span></div>
 
