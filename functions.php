@@ -8,6 +8,40 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
 
+    ?>
+    <!-- <link rel='stylesheet' href='<?php Helper::options()->themeUrl('css/Admin/admin.css') ?>'/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+        <div class="main container">
+        <h2>主题设置</h2>
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#globle">全局设置</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#menu1">Menu 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#menu2">Menu 2</a>
+        </li>
+        </ul>
+ -->
+        <!-- 选项卡窗格
+        <div class="tab-content">
+            <div class="tab-pane container active" id="globle">
+                
+                
+            </div>
+            <div class="tab-pane container fade" id="menu1">...</div>
+            <div class="tab-pane container fade" id="menu2">...</div>
+        </div>
+    </div>
+     -->
+
+
+    <?php
+
 	//header部分
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('favicon'), _t('标签页icon，不写不加载'));
     
@@ -15,8 +49,9 @@ function themeConfig($form) {
 
 	$logoTxt2 = new Typecho_Widget_Helper_Form_Element_Text('logoTxt2', NULL, NULL, _t('首页字2'), _t('不写不加载'));
 
-	$form->addInput($favicon);
-    
+	
+    $form->addInput($favicon);
+
     $form->addInput($logoTxt);
 
 	$form->addInput($logoTxt2);
@@ -157,8 +192,11 @@ function themeConfig($form) {
 
 
 }
+?>
 
 
+
+<?php
 /* 文章自定义字段 */
 function themeFields($layout) {
     $backgroundImage = new Typecho_Widget_Helper_Form_Element_Text('backgroundImage', null, null, _t('文章背景图'), _t('作为整页背景显示，不填不显示'));

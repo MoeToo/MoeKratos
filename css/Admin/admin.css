@@ -1,0 +1,12 @@
+.typecho-page-title,
+.typecho-foot {
+  display: none !important;
+}
+.main{
+    margin: 5%;
+    background: aliceblue;
+    
+}
+body{
+    background-color: cornflowerblue !important;
+}

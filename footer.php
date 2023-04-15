@@ -24,8 +24,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 
 
-							<p> © <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>. All Rights Reserved. | <a href="https://blog.moe2.works/admin" rel="nofollow">后台</a><br>
-							Theme <a href="https://blog.moe2.works/archives/6/" rel="nofollow">MoeKratos</a> | <?php if ($this->options->beian): ?><?php $this->options->beian(); ?><?php else: ?><?php endif; ?></p>
+							<p> © <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>. All Rights Reserved. | <a href="<?php $this->options ->siteUrl(); ?>admin" rel="nofollow">后台</a><br>
+							Theme <a href="https://blog.moe2.works/archives/6/" rel="nofollow">MoeKratos</a><?php if ($this->options->beian): ?> | <?php $this->options->beian(); ?><?php else: ?><?php endif; ?></p>
                             <div id="runtime_span"></div>
 						</div>
 

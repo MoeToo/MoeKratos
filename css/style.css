@@ -1244,7 +1244,8 @@ article a {
 	margin-bottom:-14px;
 	margin-top:15px;
 	word-break:break-all;
-	word-wrap:break-word
+	word-wrap:break-word;
+	
 }
 .comments-area img {
 	max-width:100%;
@@ -1254,6 +1255,7 @@ article a {
 	padding: 17px 17px 14px;
 	background-color: #fff;
 	box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+	border-radius: 15px;
 }
 .comments-title {
 	margin:0;
@@ -1315,7 +1317,15 @@ article a {
 	color:#fff;
 	font-size:11px;
 	-webkit-transition:all .4s;
-	transition:all .4s
+	transition:all .4s;
+	-moz-transition:all .4s;
+	-ms-transition:all .4s;
+	-o-transition:all .4s;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
 }
 a.comment-reply-link:focus,a.comment-reply-link:hover {
 	background-color:#666;
