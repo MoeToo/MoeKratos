@@ -10,7 +10,7 @@
 
  * @author MoeToo
 
- * @version 1.1
+ * @version 1.1.2
 
  * @link https://blog.moe2.works/archives/6/
 
@@ -62,7 +62,8 @@ if ($imgCount >= 1) {
 
 	echo($html);
 
-}else{
+}
+else{
 	if ($this->fields->backgroundImage) {
 
 		$img = $this->fields->backgroundImage;

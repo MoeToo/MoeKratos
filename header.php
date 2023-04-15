@@ -53,7 +53,7 @@
 
 		<?php endif; ?>
 
-		<?php if(!$this->is('index')): ?>
+		<?php if($this->is('post')): ?>
 			<?php if($this->fields->backgroundImage): ?>
 				<style type="text/css">
 
@@ -129,7 +129,7 @@
 	<div class="kratos-overlay"></div>
 
 	<div class="kratos-cover kratos-cover_2 text-center" style="
-	<?php if(!$this->is('index')): ?>
+	<?php if($this->is('post')): ?>
 		<?php if(!$this->fields->backgroundImage): ?>
 			background-image: url(<?php ($this->options->bannerimg) ? $this->options->bannerimg() : $this->options->themeUrl('images/head.png'); ?>
 		<?php endif ?>

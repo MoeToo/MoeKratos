@@ -9,40 +9,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
 
     ?>
-    <!-- <link rel='stylesheet' href='<?php Helper::options()->themeUrl('css/Admin/admin.css') ?>'/>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
-
-        <div class="main container">
-        <h2>主题设置</h2>
-        <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="pill" href="#globle">全局设置</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#menu1">Menu 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#menu2">Menu 2</a>
-        </li>
-        </ul>
- -->
-        <!-- 选项卡窗格
-        <div class="tab-content">
-            <div class="tab-pane container active" id="globle">
-                
-                
-            </div>
-            <div class="tab-pane container fade" id="menu1">...</div>
-            <div class="tab-pane container fade" id="menu2">...</div>
-        </div>
-    </div>
-     -->
-
+    <h1>主题设置</h1>
+    <link rel='stylesheet' href='<?php Helper::options()->themeUrl('css/Admin/admin.css') ?>'/>
 
     <?php
 
-	//header部分
+    //header部分
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('favicon'), _t('标签页icon，不写不加载'));
     
     $logoTxt = new Typecho_Widget_Helper_Form_Element_Text('logoTxt', NULL, NULL, _t('首页字1'), _t('不写不加载'));
@@ -385,7 +357,98 @@ echo $defaults['after'];
 
 }
 
-
+// 获取浏览器信息
+function getBrowser($agent)
+{
+    if (preg_match('/MSIE\s([^\s|;]+)/i', $agent, $regs)) {
+        $outputer = 'Internet Explore';
+    } else if (preg_match('/FireFox\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Firefox/', $regs[0]);
+        $FireFox_vern = explode('.', $str1[1]);
+        $outputer = 'FireFox';
+    } else if (preg_match('/Maxthon([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Maxthon/', $agent);
+        $Maxthon_vern = explode('.', $str1[1]);
+        $outputer = 'MicroSoft Edge';
+    } else if (preg_match('#360([a-zA-Z0-9.]+)#i', $agent, $regs)) {
+        $outputer = '360 Fast Browser';
+    } else if (preg_match('/Edge([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Edge/', $regs[0]);
+        $Edge_vern = explode('.', $str1[1]);
+        $outputer = 'MicroSoft Edge';
+    } else if (preg_match('/UC/i', $agent)) {
+        $str1 = explode('rowser/',  $agent);
+        $UCBrowser_vern = explode('.', $str1[1]);
+        $outputer = 'UC Browser';
+    }  else if (preg_match('/QQ/i', $agent, $regs)||preg_match('/QQ Browser\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('rowser/',  $agent);
+        $QQ_vern = explode('.', $str1[1]);
+        $outputer = 'QQ Browser';
+    } else if (preg_match('/UBrowser/i', $agent, $regs)) {
+        $str1 = explode('rowser/',  $agent);
+        $UCBrowser_vern = explode('.', $str1[1]);
+        $outputer = 'UC Browser';
+    }  else if (preg_match('/Opera[\s|\/]([^\s]+)/i', $agent, $regs)) {
+        $outputer = 'Opera';
+    } else if (preg_match('/Chrome([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Chrome/', $agent);
+        $chrome_vern = explode('.', $str1[1]);
+        $outputer = 'Google Chrome';
+    } else if (preg_match('/safari\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Version/',  $agent);
+        $safari_vern = explode('.', $str1[1]);
+        $outputer = 'Safari';
+    } else{
+        $outputer = 'Google Chrome';
+    }
+    echo $outputer;
+}
+// 获取操作系统信息
+function getOs($agent)
+{
+    $os = false;
+    if (preg_match('/win/i', $agent)) {
+        if (preg_match('/nt 6.0/i', $agent)) {
+            $os = 'Windows Vista&nbsp;·&nbsp;';
+        } else if (preg_match('/nt 6.1/i', $agent)) {
+            $os = 'Windows 7&nbsp;·&nbsp;';
+        } else if (preg_match('/nt 6.2/i', $agent)) {
+            $os = 'Windows 8&nbsp;·&nbsp;';
+        } else if(preg_match('/nt 6.3/i', $agent)) {
+            $os = 'Windows 8.1&nbsp;·&nbsp;';
+        } else if(preg_match('/nt 5.1/i', $agent)) {
+            $os = 'Windows XP&nbsp;·&nbsp;';
+        } else if (preg_match('/nt 10.0/i', $agent)) {
+            $os = 'Windows 10&nbsp;·&nbsp;';
+        } else{
+            $os = 'Windows X64&nbsp;·&nbsp;';
+        }
+    } else if (preg_match('/android/i', $agent)) {
+        if (preg_match('/android 9/i', $agent)) {
+            $os = 'Android Pie&nbsp;·&nbsp;';
+        }
+        else if (preg_match('/android 8/i', $agent)) {
+            $os = 'Android Oreo&nbsp;·&nbsp;';
+        }
+        else {
+            $os = 'Android&nbsp;·&nbsp;';
+        }
+    }
+    else if (preg_match('/ubuntu/i', $agent)) {
+        $os = 'Ubuntu&nbsp;·&nbsp;';
+    } else if (preg_match('/linux/i', $agent)) {
+        $os = 'Linux&nbsp;·&nbsp;';
+    } else if (preg_match('/iPhone/i', $agent)) {
+        $os = 'iPhone&nbsp;·&nbsp;';
+    } else if (preg_match('/mac/i', $agent)) {
+        $os = 'MacOS&nbsp;·&nbsp;';
+    }else if (preg_match('/fusion/i', $agent)) {
+        $os = 'Android&nbsp;·&nbsp;';
+    } else {
+        $os = 'Linux&nbsp;·&nbsp;';
+    }
+    echo $os;
+}
 
 ?>
 

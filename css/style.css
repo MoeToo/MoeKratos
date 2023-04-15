@@ -62,6 +62,25 @@ figure {
 	background:#262a30;
 	color:#fcfcfc
 }
+/*定义滚动条高宽及背景*/
+::-webkit-scrollbar {
+	width: 5px;
+	height: 2px;
+	background-color: #F5F5F5;
+}
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+}
+/*定义滑块*/
+::-webkit-scrollbar-thumb {
+	border-radius: 15px;
+	background-color: #51aded;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+}
 blockquote {
 	margin:12px 0;
 	border-left:5px solid #080808;
@@ -2218,7 +2237,12 @@ img.size-smiley {
 	width:240px;
 	height:145px;
 	overflow:hidden;
-	margin:20px
+	margin:20px;
+	border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	-ms-border-radius: 15px 15px 0 0;
+	-o-border-radius: 15px 15px 0 0;
 }
 .kratos-entry-thumb-new img {
 	padding:2px;
@@ -2952,3 +2976,4 @@ img.size-smiley {
 	height:190px
 }
 }
+

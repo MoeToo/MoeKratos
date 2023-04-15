@@ -26,7 +26,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 							<p> © <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>. All Rights Reserved. | <a href="<?php $this->options ->siteUrl(); ?>admin" rel="nofollow">后台</a><br>
 							Theme <a href="https://blog.moe2.works/archives/6/" rel="nofollow">MoeKratos</a><?php if ($this->options->beian): ?> | <?php $this->options->beian(); ?><?php else: ?><?php endif; ?></p>
-                            <div id="runtime_span"></div>
+                            <?php if ($this->options->setupTime): ?><div id="runtime_span"></div><?php endif; ?>
 						</div>
 
 					</div>
@@ -137,10 +137,9 @@ if ($("#main").height() > $("#sidebar").height()) {
     }
     show_runtime();
 </script>
-<!-- require APlayer -->
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<!-- require MetingJS -->
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
 <meting-js
