@@ -18,7 +18,24 @@
 
 <?php endif; ?>
 
+<?php //侧栏音乐 ?>
+<?php if ($this->options->musicId): ?>
+<?php if ($this->options->musicPlace == 'sidebar'): ?>
 
+	<aside id="kratos_ad-2" class="widget widget_kratos_ad clearfix">
+
+		<meting-js
+		server="netease"
+		type="playlist"
+		listFolded=true
+		id="<?php $this->options->musicId(); ?>"
+		autoplay="<?php if ($this->options->musicAutoPlay == 'able'): ?>true<?php else: ?>false<?php endif; ?>">
+		</meting-js>
+
+    </aside>
+
+<?php endif; ?>
+<?php endif; ?>
 
 <?php //搜索框 ?>
 
@@ -42,7 +59,7 @@
 
 	<ul id="tabul" class="nav nav-tabs nav-justified visible-md">
 
-	<li><a href="#rand" data-toggle="tab">随机</a></li>
+	<li><a data-toggle="tab">随机</a></li>
 
 	</ul>
 
@@ -103,8 +120,6 @@
 
 
 
-
-	
 
 </div>
 

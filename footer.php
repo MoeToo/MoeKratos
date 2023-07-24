@@ -137,19 +137,20 @@ if ($("#main").height() > $("#sidebar").height()) {
     }
     show_runtime();
 </script>
-
+<?php if ($this->options->musicId): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
+<?php if ($this->options->musicPlace == 'footer'): ?>
 <meting-js
 	server="netease"
 	type="playlist"
-	id="<?php if ($this->options->musicId): ?><?php $this->options->musicId(); ?><?php else: ?><?php endif; ?>"
+	id="<?php $this->options->musicId(); ?>"
     fixed="True"
     autoplay="<?php if ($this->options->musicAutoPlay == 'able'): ?>true<?php else: ?>false<?php endif; ?>">
 </meting-js>
-
+<?php endif; ?>
+<?php endif; ?>
 <!-- pjax -->
 
 

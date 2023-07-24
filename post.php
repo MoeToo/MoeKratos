@@ -64,6 +64,7 @@
 
 								<?php $this->tags(' ', true, ' '); ?>
 								<a>本作品采用 知识共享署名-相同方式共享 4.0 国际许可协议 进行许可</a>
+								<a>本文最后更新于<?php echo date('Y年m月d日', $this->modified); ?></a>
 
 								</div>
 

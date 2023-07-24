@@ -157,6 +157,18 @@ function themeConfig($form) {
     
     $form->addInput($musicAutoPlay);
 
+    $musicPlace = new Typecho_Widget_Helper_Form_Element_Radio('musicPlace',
+
+    array('sidebar' => _t('侧边栏'),
+
+        'footer' => _t('吸底'),
+
+    ),
+
+    'footer', _t('音乐播放器位置'), _t('默认吸底【侧边栏效果尚待优化】'));
+
+    $form->addInput($musicPlace);
+
     $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('备案号'), _t('支持html格式，不写不加载'));
 
     $form->addInput($beian);

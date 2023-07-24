@@ -10,7 +10,7 @@
 
  * @author MoeToo
 
- * @version 1.1.2
+ * @version 1.1.3
 
  * @link https://blog.moe2.works/archives/6/
 

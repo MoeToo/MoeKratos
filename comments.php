@@ -73,6 +73,32 @@ $comments->alt(' odd', ' even');
         $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
 
     ?>
+
+    <?php 
+        $number=$comments->mail;
+        
+        if(preg_match('|^[1-9]\d{4,11}@qq\.com$|i',$number)){
+    
+            $avatar = 'https://q2.qlogo.cn/headimg_dl?dst_uin='.$number.'&spec=100'; 
+        }
+        else{
+            $host = 'https://gravatar.loli.net';
+
+            $url = '/avatar/';
+
+            $size = '50';
+
+            $rating = Helper::options()->commentsAvatarRating;
+
+            $hash = md5(strtolower($comments->mail));
+
+            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
+        }
+    ?>
+
+<span itemprop="image">
+
+</span>
     
 
 	<div id="<?php $comments->theId(); ?>" class="comment-body">
